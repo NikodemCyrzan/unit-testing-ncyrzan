@@ -35,7 +35,7 @@ describe("task1", () => {
 	});
 
 	it("returns false if fetchIsUserNameAvailable fails", async () => {
-		mockedFetchIsUserNameAvailable.mockRejectedValue(new Error("test"));
+		mockedFetchIsUserNameAvailable.mockRejectedValue(new Error());
 
 		expect(await validateUserName("username")).toBe(false);
 	});
