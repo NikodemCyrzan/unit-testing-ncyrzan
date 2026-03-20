@@ -1,8 +1,8 @@
 import { QuantityValidator } from "tasks/task2";
 
 describe("QuantityValidator", () => {
-	it.each([-1, -5, -9])("throws error if threshold is < 0", (treshold) => {
-		expect(() => new QuantityValidator(treshold, 5)).toThrow("Threshold can't be negative");
+	it.each([-1, -5, -9])("throws error if threshold is < 0", (threshold) => {
+		expect(() => new QuantityValidator(threshold, 5)).toThrow("Threshold can't be negative");
 	});
 
 	it.each([0, -5, -9])("throws error if packageSize is <= 0", (packageSize) => {
