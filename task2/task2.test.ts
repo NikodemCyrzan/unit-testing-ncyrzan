@@ -47,6 +47,15 @@ describe("QuantityValidator", () => {
 		},
 	);
 
+	it("is not valid when quantity equals threshold and is not divisible by packageSize", () => {
+		const validator = new QuantityValidator(10, 6);
+
+		const result = validator.validate(10);
+
+		expect(result.isValid).toBe(false);
+		expect(result.error).toBe("Quantity should be divisible by 6");
+	});
+
 	it("returns error when not valid", () => {
 		const validator = new QuantityValidator(5, 5);
 
